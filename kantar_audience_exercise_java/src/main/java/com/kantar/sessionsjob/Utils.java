@@ -24,7 +24,7 @@ import au.com.bytecode.opencsv.bean.HeaderColumnNameTranslateMappingStrategy;
 
 
 /**
-* Utils class holding methods for reading PSV, transforming data and loading results to PCV file
+* Utils class holding methods for reading PSV, transforming data and loading results to PSV file
 */
 public class Utils {	
 	

@@ -1,9 +1,7 @@
 package com.kantar.sessionsjob;
 
 import static org.junit.jupiter.api.Assertions.*;
-
 import java.util.List;
-
 import org.junit.jupiter.api.Test;
 
 class UtilsTest {
@@ -15,16 +13,44 @@ class UtilsTest {
 		
 		String fileImportPathInput = "src/test/resources/input-statements.psv";
 		
-		
-		 List<InputStatement> inputStatements = Utils.getInputPSV(fileImportPathInput);
-		
-		
-		 for (InputStatement inputStatement : inputStatements) {
-			 ACTUAL =  inputStatement.getHomeNo()+"|"+inputStatement.getChannel()+"|"+inputStatement.getStarttime()+"|"+inputStatement.getActivity();
-			 break;
+		List<InputStatement> inputStatements = Utils.getInputPSV(fileImportPathInput);		
+		for (InputStatement inputStatement : inputStatements) {
+			ACTUAL =  inputStatement.getHomeNo()+"|"+inputStatement.getChannel()+"|"+inputStatement.getStarttime()+"|"+inputStatement.getActivity();
+			break;
 		    }
 		
 		assertEquals(EXPECTED, ACTUAL);
-
+	}
+	
+	@Test
+	void testCalculateSessionTime() {
+		final String EXPECTED = "1800" ;
+		 
+		String startDateS = "20200101180000";
+		String endDateS = "20200101183000";
+		String ACTUAL = Utils.calculateSessionTime(startDateS , endDateS);
+		
+		assertEquals(EXPECTED, ACTUAL); 
+	}
+	
+	@Test
+	void testCalculateSessionTimeForCeiling() {
+		final String EXPECTED = "10800" ;
+		 
+		String startDateS = "20200101210000";
+		String endDateS = "20200101235959";
+		String ACTUAL = Utils.calculateSessionTimeForCeiling(startDateS , endDateS);
+		
+		assertEquals(EXPECTED, ACTUAL); 
+	}
+	
+	@Test
+	void testCalculateCeilingEndTimeMinusSecond() {
+		final String EXPECTED = "20200102235959" ;
+		 
+		String startDateS = "20200102060000";
+		String ACTUAL = Utils.calculateCeilingEndTimeMinusSecond(startDateS);
+		
+		assertEquals(EXPECTED, ACTUAL); 
 	}
 }

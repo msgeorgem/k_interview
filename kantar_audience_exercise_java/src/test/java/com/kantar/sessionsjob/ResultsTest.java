@@ -33,7 +33,7 @@ class ResultsTest {
 		String EXPECTED = "";
 		
 		String fileImportPathExpected = "src/test/resources/expected-sessions.psv"; 
-		String fileImportPathResults = "src/test/resources/actual-sessions.psv";
+		String fileImportPathResults = "src/test/resources/actual-sessions-test.psv";
 		
 		
 		List<OutputSession> exp = getReadPSVOutput(fileImportPathExpected);
@@ -81,9 +81,7 @@ class ResultsTest {
 
 			System.out.print("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!Results file has not been generated yet!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
 			System.out.print("\n");
-			System.out.print("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!Run program to generate results file!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
-			System.out.print("\n");
-			System.out.print("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!> java -jar target/SessionsJob-1.0.jar <!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
+			System.out.print("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!Run ResultsGenerateForResultsTest to generate test results file!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
 			System.out.print("\n");
 			System.out.print("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!ResultsTest is going to fail!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
 			System.out.print("\n");

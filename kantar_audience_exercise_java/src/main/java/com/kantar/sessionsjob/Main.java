@@ -17,13 +17,10 @@ public class Main {
     	String fileImportPath = "";
     	String fileOutputPath = "";
 
-        if (args.length < 1) {
+        if (args.length < 2) {
         	
-        	fileImportPath = "src/test/resources/input-statements.psv"; 
-        	fileOutputPath = "src/test/resources/actual-sessions.psv";
-        	
-        	System.out.println("Missing arguments: <input-statements-file> <output-sessions-file>");
-        	System.out.println("Loaded defaults: <src/test/resources/input-statements.psv> <src/test/resources/actual-sessions.psv>");
+        	System.err.println("Missing arguments: <input-statements-file> <output-sessions-file>");
+            System.exit(1);
 
         } else {
 

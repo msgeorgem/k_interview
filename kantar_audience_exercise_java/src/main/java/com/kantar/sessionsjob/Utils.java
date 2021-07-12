@@ -37,40 +37,38 @@ public class Utils {
 public static List<InputStatement> getInputPSV(String filePath)  {
 	
 	
-		CSVReader reader;
-		List<InputStatement> inputStatements = null;
+	CSVReader reader;
+	List<InputStatement> inputStatements = null;
 
-        HeaderColumnNameTranslateMappingStrategy<InputStatement> beanStrategy = new HeaderColumnNameTranslateMappingStrategy<InputStatement>();
-    	beanStrategy.setType(InputStatement.class);
+	HeaderColumnNameTranslateMappingStrategy<InputStatement> beanStrategy = new HeaderColumnNameTranslateMappingStrategy<InputStatement>();
+	beanStrategy.setType(InputStatement.class);
     	
-    	Map<String, String> columnMapping = new HashMap<String, String>();
-    	columnMapping.put("Activity", "activity");
-    	columnMapping.put("Channel", "channel");
-    	columnMapping.put("HomeNo", "homeNo");
-    	columnMapping.put("Starttime", "starttime");
+	Map<String, String> columnMapping = new HashMap<String, String>();
+	columnMapping.put("Activity", "activity");
+	columnMapping.put("Channel", "channel");
+	columnMapping.put("HomeNo", "homeNo");
+	columnMapping.put("Starttime", "starttime");
 
-    	beanStrategy.setColumnMapping(columnMapping);
+	beanStrategy.setColumnMapping(columnMapping);
 	
-		CsvToBean<InputStatement> csvToBean = new CsvToBean<InputStatement>();
+	CsvToBean<InputStatement> csvToBean = new CsvToBean<InputStatement>();
 		
-		try {
-			reader = new CSVReader(new FileReader(filePath),'|');
+	try {
+		reader = new CSVReader(new FileReader(filePath),'|');
 			
-			inputStatements = csvToBean.parse(beanStrategy, reader);
-			
-			Collections.sort(inputStatements);
+		inputStatements = csvToBean.parse(beanStrategy, reader);
+		Collections.sort(inputStatements);
 			
 //			for (InputStatement inputStatement : inputStatements) {
 //		    	System.out.print(inputStatement); 
 //		    	System.out.print("\n"); 
 //		    	}
 			
-		} catch (FileNotFoundException e) {
-			
-			e.printStackTrace();
+	} catch (FileNotFoundException e) {
+		e.printStackTrace();
 		}
 		
-		return inputStatements;	
+	return inputStatements;	
 }
 
 /**
@@ -122,11 +120,10 @@ public static List<OutputSession> transformInputResults (List<InputStatement> in
 
 	for (int i = 0; i < intputStatements.size(); i++) {
 		
-		
 //    	System.out.print(intputStatements.get(i).getHomeNo() + "|" + intputStatements.get(i).getChannel() + "|" + intputStatements.get(i).getStarttime()  + "|" + intputStatements.get(i).getActivity()); 
 //    	System.out.print("\n"); 
     	
-    	OutputSession outputSession = new OutputSession(
+		OutputSession outputSession = new OutputSession(
     			intputStatements.get(i).getHomeNo(),
     			intputStatements.get(i).getChannel(),
     			intputStatements.get(i).getStarttime(),
@@ -265,9 +262,8 @@ public static String calculateEndTimeMinusSecond(String endDateS) {
     return endTimeMinusSecondS;
 }
 
-
 /**
-* Converts start datetime to end datetime minus second in string format   
+* Converts start datetime to end datetime minus second in string forma  
 *
 * @param startDateS --start datetime of session String
 * @return endTimeMinusSecondS

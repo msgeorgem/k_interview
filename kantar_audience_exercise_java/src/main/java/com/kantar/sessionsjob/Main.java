@@ -31,13 +31,13 @@ public class Main {
         	fileOutputPath = args[1];
        }
         
-       // Reading input statements file from "src/test/resources/input-statements.psv" and loading to inputStatements List
+       // Reading input statements file from fileImportPath and loading to inputStatements List
         List<InputStatement> inputStatements = Utils.getInputPSV(fileImportPath);
         
-        // Transforming  List inputStatements into outputSessions List
+        // Transforming inputStatements List into outputSessions List
         List<OutputSession> outputSessions =  Utils.transformInputResults(inputStatements);
         
-        // Storing outputSessions to "target/actual-sessions.psv"
+        // Storing outputSessions List to "target/actual-sessions.psv"
         Utils.saveOutputToPSV(fileOutputPath, outputSessions);
 
     }

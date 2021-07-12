@@ -263,7 +263,7 @@ public static String calculateEndTimeMinusSecond(String endDateS) {
 }
 
 /**
-* Converts start datetime to end datetime minus second in string forma  
+* Converts start datetime to end datetime minus second in string format  
 *
 * @param startDateS --start datetime of session String
 * @return endTimeMinusSecondS

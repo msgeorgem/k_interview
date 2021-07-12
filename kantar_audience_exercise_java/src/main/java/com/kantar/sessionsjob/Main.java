@@ -36,7 +36,6 @@ public class Main {
         
         // Storing outputSessions List to "target/actual-sessions.psv"
         Utils.saveOutputToPSV(fileOutputPath, outputSessions);
-
     }
 
 }

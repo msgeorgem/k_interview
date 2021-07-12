@@ -194,10 +194,10 @@ public static String convertDateFormattoString(Date date) {
 	
 	DateFormat dateFormat = new SimpleDateFormat("yyyyMMddHHmmss");  
     
-    String strDate = dateFormat.format(date);  
-    //System.out.println("Converted String: " + strDate);  
+	String strDate = dateFormat.format(date);  
+	//System.out.println("Converted String: " + strDate);  
     
-    return strDate;
+	return strDate;
 } 
 
 
@@ -216,10 +216,10 @@ public static String calculateSessionTime(String startDateS , String endDateS) {
 	
 	long differenceInSeconds = (endDate.getTime() - startDate.getTime())/1000;
     
-    String duration = Long.toString(differenceInSeconds);  
-    //System.out.println("Converted Duration String: " + duration);  
+	String duration = Long.toString(differenceInSeconds);  
+	//System.out.println("Converted Duration String: " + duration);  
     
-    return duration;
+	return duration;
 } 
 
 /**
@@ -238,10 +238,10 @@ public static String calculateSessionTimeForCeiling(String startDateS , String e
 	
 	long differenceInSeconds = (endDate.getTime() - startDate.getTime() + 1000)/1000;
     
-    String duration = Long.toString(differenceInSeconds);  
-    //System.out.println("Converted Duration String: " + duration);  
-    
-    return duration;
+	String duration = Long.toString(differenceInSeconds);  
+	//System.out.println("Converted Duration String: " + duration);
+	
+	return duration;
 } 
 
 /**
@@ -255,11 +255,11 @@ public static String calculateEndTimeMinusSecond(String endDateS) {
 	
 	Date endDate = convertStringToDateFormat(endDateS); 
 	long endTimeMinusSecond = (endDate.getTime() - 1000);
-	Date date = new Date(endTimeMinusSecond);   
-    String endTimeMinusSecondS = convertDateFormattoString(date);  
-    //System.out.println("Converted Duration String: " + endTimeMinusSecondS);  
+	Date date = new Date(endTimeMinusSecond);
+	String endTimeMinusSecondS = convertDateFormattoString(date);  
+	//System.out.println("Converted Duration String: " + endTimeMinusSecondS);  
     
-    return endTimeMinusSecondS;
+	return endTimeMinusSecondS;
 }
 
 /**
@@ -274,11 +274,10 @@ public static String calculateCeilingEndTimeMinusSecond(String startDateS) {
 	Date endDate = convertStringToDateFormat(startDateS);
 	Date ceilingEndDate = DateUtils.ceiling(endDate, Calendar.DATE);
 	long endTimeMinusSecond = (ceilingEndDate.getTime() - 1000);
-	Date date = new Date(endTimeMinusSecond);   
-    String endTimeMinusSecondS = convertDateFormattoString(date);  
-    //System.out.println("Converted Duration String: " + endTimeMinusSecondS);  
-    
-    return endTimeMinusSecondS;
+	Date date = new Date(endTimeMinusSecond);
+	String endTimeMinusSecondS = convertDateFormattoString(date);  
+	//System.out.println("Converted Duration String: " + endTimeMinusSecondS);
+	return endTimeMinusSecondS;
 } 
 
 }

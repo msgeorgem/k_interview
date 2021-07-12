@@ -19,7 +19,7 @@ import au.com.bytecode.opencsv.bean.HeaderColumnNameTranslateMappingStrategy;
 
 /**
 * ResultsTest to be conducted after running
-* java -jar target/SessionsJob-1.0.jar or triggering Main.java
+* Main.java
 * which generates results file in here: "src/test/resources/actual-sessions.psv"
 * before generating results file test is allowed to fail 
 */

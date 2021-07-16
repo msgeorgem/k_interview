@@ -47,7 +47,7 @@ class ResultsTest {
 		}
 	}
 	
-	public static List<OutputSession> getReadPSVOutput(String filePath)  {
+	private List<OutputSession> getReadPSVOutput(String filePath)  {
 		
 		
 		CSVReader reader;

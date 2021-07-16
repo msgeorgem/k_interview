@@ -13,7 +13,9 @@ class UtilsTest {
 		
 		String fileImportPathInput = "src/test/resources/input-statements.psv";
 		
-		List<InputStatement> inputStatements = Utils.getInputPSV(fileImportPathInput);		
+		ReadPSV readPSV = new ReadPSV(fileImportPathInput);
+		
+		List<InputStatement> inputStatements = readPSV.getInputPSV();		
 		for (InputStatement inputStatement : inputStatements) {
 			ACTUAL =  inputStatement.getHomeNo()+"|"+inputStatement.getChannel()+"|"+inputStatement.getStarttime()+"|"+inputStatement.getActivity();
 			break;
